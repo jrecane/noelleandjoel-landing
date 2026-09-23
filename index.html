@@ -20,12 +20,13 @@
     box-sizing: border-box;
   }
 
-  html, body {
+  html {
     height: 100%;
   }
 
   body {
     margin: 0;
+    min-height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,11 +46,53 @@
 
   main {
     max-width: 520px;
+    width: 100%;
     background: rgba(250, 247, 242, 0.88);
     border-radius: 16px;
     padding: 40px 32px;
     box-shadow: 0 12px 40px rgba(20, 12, 40, 0.25);
     backdrop-filter: blur(2px);
+  }
+
+  /* Short/landscape viewports (e.g. a phone turned sideways): the card is
+     often taller than the screen. Top-align instead of centering so the
+     overflow scrolls naturally instead of clipping off-screen, and trim
+     the padding/spacing so there's less to scroll through. */
+  @media (max-height: 500px) {
+    body {
+      align-items: flex-start;
+      background-attachment: scroll, scroll;
+      padding: 16px;
+    }
+
+    main {
+      margin: 8px auto;
+      padding: 24px 20px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3rem);
+    }
+
+    .tagline {
+      margin-top: 16px;
+    }
+
+    .divider {
+      margin: 20px auto;
+    }
+
+    .video-wrap {
+      margin-top: 20px;
+    }
+  }
+
+  /* iOS Safari handles `background-attachment: fixed` poorly on any touch
+     device; use normal scrolling backgrounds there regardless of height. */
+  @media (hover: none) and (pointer: coarse) {
+    body {
+      background-attachment: scroll, scroll;
+    }
   }
 
   .eyebrow {
