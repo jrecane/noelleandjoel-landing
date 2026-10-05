@@ -193,6 +193,17 @@ h1 {
   color: var(--accent);
 }
 
+/* Password gate: center the field under the welcome text instead of the
+   left-aligned layout the full RSVP form uses. */
+#gate .field {
+  text-align: center;
+}
+
+#gate .field input {
+  max-width: 240px;
+  margin: 0 auto;
+}
+
 /* RSVP form */
 .field {
   text-align: left;
