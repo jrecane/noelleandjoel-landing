@@ -9,138 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
-<style>
-  :root {
-    --background: #3a3160;
-    --foreground: #2f2a24;
-    --accent: #065f46;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-
-  html {
-    height: 100%;
-  }
-
-  body {
-    margin: 0;
-    min-height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--background);
-    background-image:
-      linear-gradient(180deg, rgba(20, 30, 45, 0.15) 0%, rgba(20, 30, 45, 0.05) 40%, rgba(10, 15, 25, 0.35) 100%),
-      url("images/glacier.jpg");
-    background-size: cover, cover;
-    background-position: center, center 55%;
-    background-repeat: no-repeat, no-repeat;
-    background-attachment: fixed, fixed;
-    color: var(--foreground);
-    font-family: 'Inter', sans-serif;
-    text-align: center;
-    padding: 24px;
-  }
-
-  main {
-    max-width: 520px;
-    width: 100%;
-    background: rgba(250, 247, 242, 0.88);
-    border-radius: 16px;
-    padding: 40px 32px;
-    box-shadow: 0 12px 40px rgba(20, 12, 40, 0.25);
-    backdrop-filter: blur(2px);
-  }
-
-  /* Short/landscape viewports (e.g. a phone turned sideways): the card is
-     often taller than the screen. Top-align instead of centering so the
-     overflow scrolls naturally instead of clipping off-screen, and trim
-     the padding/spacing so there's less to scroll through. */
-  @media (max-height: 500px) {
-    body {
-      align-items: flex-start;
-      background-attachment: scroll, scroll;
-      padding: 16px;
-    }
-
-    main {
-      margin: 8px auto;
-      padding: 24px 20px;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 6vw, 3rem);
-    }
-
-    .tagline {
-      margin-top: 16px;
-    }
-
-    .divider {
-      margin: 20px auto;
-    }
-
-    .video-wrap {
-      margin-top: 20px;
-    }
-  }
-
-  /* iOS Safari handles `background-attachment: fixed` poorly on any touch
-     device; use normal scrolling backgrounds there regardless of height. */
-  @media (hover: none) and (pointer: coarse) {
-    body {
-      background-attachment: scroll, scroll;
-    }
-  }
-
-  .eyebrow {
-    margin: 0 0 12px;
-    font-size: 13px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
-
-  h1 {
-    margin: 0;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-    font-size: clamp(2.75rem, 8vw, 4.5rem);
-    line-height: 1.1;
-  }
-
-  .tagline {
-    margin: 24px 0 0;
-    font-size: 17px;
-    line-height: 1.6;
-    color: #57534e;
-  }
-
-  .divider {
-    width: 48px;
-    height: 1px;
-    background: var(--accent);
-    opacity: 0.4;
-    margin: 32px auto;
-  }
-
-  .video-wrap {
-    margin-top: 28px;
-    border-radius: 12px;
-    overflow: hidden;
-    aspect-ratio: 16 / 9;
-    box-shadow: 0 8px 24px rgba(6, 95, 70, 0.12);
-  }
-
-  .video-wrap iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main>
@@ -164,6 +33,14 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
+    </div>
+
+    <div class="rsvp-callout">
+      <p class="tagline">
+        Can't wait to let us know? You're welcome to RSVP early —
+        we'd love to hear from you.
+      </p>
+      <a class="button" href="rsvp.html">RSVP Early</a>
     </div>
   </main>
 </body>

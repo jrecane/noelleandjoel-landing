@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSVP — Noëlle &amp; Joel</title>
+<meta name="description" content="RSVP early for Noëlle & Joel's wedding.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <a class="back-link" href="index.html">&larr; Back</a>
+    <p class="eyebrow">We're getting married</p>
+    <h1>RSVP</h1>
+    <div class="divider"></div>
+    <p class="tagline">
+      Let us know you're coming — we're so excited to celebrate with you.
+    </p>
+    <p class="note">
+      Children are all welcome and don't count against your plus one —
+      just let us know who's coming below.
+    </p>
+
+    <form id="rsvp-form">
+      <div class="field">
+        <label for="name">Your Name(s)</label>
+        <p class="hint">
+          Please list everyone in your party who's attending — e.g. if you
+          and your partner were both invited, include both names here.
+        </p>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="field">
+        <label for="plus-one">Plus One (if applicable)</label>
+        <p class="hint">
+          Bringing someone not listed above? Let us know their name so we
+          know who to expect.
+        </p>
+        <input type="text" id="plus-one" name="plusOne">
+      </div>
+
+      <div class="field">
+        <label for="children">Children Attending</label>
+        <input type="text" id="children" name="children" placeholder="Names and ages, if any">
+      </div>
+
+      <div class="field">
+        <label>Will you be attending?</label>
+        <div class="rsvp-choices">
+          <input type="radio" id="rsvp-yes" name="rsvp" value="yes" required>
+          <label for="rsvp-yes">Yes</label>
+
+          <input type="radio" id="rsvp-no" name="rsvp" value="no">
+          <label for="rsvp-no">No</label>
+
+          <input type="radio" id="rsvp-maybe" name="rsvp" value="maybe">
+          <label for="rsvp-maybe">Maybe</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="field">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+
+      <div class="field">
+        <label for="question">Have a question for us?</label>
+        <textarea id="question" name="question"></textarea>
+      </div>
+
+      <button type="submit" class="submit-button">Submit RSVP</button>
+    </form>
+
+    <div class="confirmation" id="confirmation">
+      Thanks! We've received your RSVP and can't wait to celebrate with you.
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('rsvp-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      this.classList.add('submitted');
+      document.getElementById('confirmation').classList.add('visible');
+    });
+  </script>
+</body>
+</html>
