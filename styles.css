@@ -289,6 +289,11 @@ h1 {
   display: block;
 }
 
+.confirmation.error {
+  background: rgba(185, 28, 28, 0.1);
+  color: #b91c1c;
+}
+
 form.submitted .field,
 form.submitted .rsvp-choices,
 form.submitted .submit-button {

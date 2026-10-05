@@ -25,7 +25,8 @@
       just let us know who's coming below.
     </p>
 
-    <form id="rsvp-form">
+    <form id="rsvp-form" action="https://formspree.io/f/xwlvedqq" method="POST">
+      <input type="hidden" name="_subject" value="New Wedding RSVP">
       <div class="field">
         <label for="name">Your Name(s)</label>
         <p class="hint">
@@ -84,13 +85,36 @@
     <div class="confirmation" id="confirmation">
       Thanks! We've received your RSVP and can't wait to celebrate with you.
     </div>
+    <div class="confirmation error" id="error">
+      Something went wrong sending your RSVP. Please try again, or email us directly.
+    </div>
   </main>
 
   <script>
-    document.getElementById('rsvp-form').addEventListener('submit', function (e) {
+    const form = document.getElementById('rsvp-form');
+    const confirmation = document.getElementById('confirmation');
+    const errorBox = document.getElementById('error');
+
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      this.classList.add('submitted');
-      document.getElementById('confirmation').classList.add('visible');
+      errorBox.classList.remove('visible');
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' },
+      })
+        .then((response) => {
+          if (response.ok) {
+            form.classList.add('submitted');
+            confirmation.classList.add('visible');
+          } else {
+            errorBox.classList.add('visible');
+          }
+        })
+        .catch(() => {
+          errorBox.classList.add('visible');
+        });
     });
   </script>
 </body>
