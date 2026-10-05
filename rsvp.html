@@ -12,7 +12,24 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main>
+<script src="auth.js"></script>
+
+  <div id="gate" class="card">
+    <p class="eyebrow">Welcome!</p>
+    <h1>Noëlle &amp; Joel's Wedding</h1>
+    <div class="divider"></div>
+    <p class="tagline">Please enter the password to continue.</p>
+    <form id="gate-form">
+      <div class="field">
+        <label for="gate-password">Password</label>
+        <input type="password" id="gate-password" name="password" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="submit-button">Enter</button>
+    </form>
+    <p class="confirmation error" id="gate-error">Incorrect password — please try again.</p>
+  </div>
+
+  <main id="site-content" class="card">
     <a class="back-link" href="index.html">&larr; Back</a>
     <p class="eyebrow">We're getting married</p>
     <h1>RSVP</h1>
