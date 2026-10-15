@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programme — Noëlle &amp; Joel</title>
+<meta name="description" content="Programme du week-end de mariage de Noëlle &amp; Joel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<script src="auth.js"></script>
+
+  <div id="gate" class="card">
+    <div class="lang-toggle">
+      <a href="schedule.html"><img class="flag" src="images/flag-us.svg" alt="">EN</a><span>/</span><a href="schedule-fr.html" class="lang-current"><img class="flag" src="images/flag-fr.svg" alt="">FR</a>
+    </div>
+    <p class="eyebrow">Bienvenue !</p>
+    <h1>Le Mariage de Noëlle &amp; Joel</h1>
+    <div class="divider"></div>
+    <p class="tagline">Veuillez entrer le mot de passe pour continuer.</p>
+    <form id="gate-form">
+      <div class="field">
+        <label for="gate-password">Mot de passe</label>
+        <input type="password" id="gate-password" name="password" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="submit-button">Entrer</button>
+    </form>
+    <p class="confirmation error" id="gate-error">Mot de passe incorrect — veuillez réessayer.</p>
+  </div>
+
+  <main id="site-content" class="card">
+    <div class="lang-toggle">
+      <a href="schedule.html"><img class="flag" src="images/flag-us.svg" alt="">EN</a><span>/</span><a href="schedule-fr.html" class="lang-current"><img class="flag" src="images/flag-fr.svg" alt="">FR</a>
+    </div>
+    <a class="back-link" href="index-fr.html">&larr; Retour</a>
+    <p class="eyebrow">Nous nous marions</p>
+    <h1>Programme du Week-end</h1>
+    <div class="divider"></div>
+    <p class="tagline">
+      Nous sommes tellement heureux que vous passiez le week-end avec
+      nous — voici ce que nous avons prévu jusqu'à présent. Plus de
+      détails suivront à mesure que nous finalisons tout.
+    </p>
+
+    <ul class="stay-list">
+      <li class="stay-item">
+        <h3>Soirée de bienvenue</h3>
+        <p class="stay-note">Vendredi 2 juillet — Lieu à déterminer</p>
+      </li>
+
+      <li class="stay-item">
+        <h3>Le Mariage</h3>
+        <p class="stay-note">Samedi 3 juillet — Arctic Valley</p>
+      </li>
+
+      <li class="stay-item">
+        <h3>Adieux &amp; Célébration du 4 juillet</h3>
+        <p class="stay-note">Dimanche 4 juillet — Lieu à déterminer</p>
+      </li>
+    </ul>
+  </main>
+</body>
+</html>

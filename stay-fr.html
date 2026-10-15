@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Où loger — Noëlle &amp; Joel</title>
+<meta name="description" content="Recommandations d'hébergement pour le mariage de Noëlle &amp; Joel à Anchorage.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+<script src="auth.js"></script>
+
+  <div id="gate" class="card">
+    <div class="lang-toggle">
+      <a href="stay.html"><img class="flag" src="images/flag-us.svg" alt="">EN</a><span>/</span><a href="stay-fr.html" class="lang-current"><img class="flag" src="images/flag-fr.svg" alt="">FR</a>
+    </div>
+    <p class="eyebrow">Bienvenue !</p>
+    <h1>Le Mariage de Noëlle &amp; Joel</h1>
+    <div class="divider"></div>
+    <p class="tagline">Veuillez entrer le mot de passe pour continuer.</p>
+    <form id="gate-form">
+      <div class="field">
+        <label for="gate-password">Mot de passe</label>
+        <input type="password" id="gate-password" name="password" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="submit-button">Entrer</button>
+    </form>
+    <p class="confirmation error" id="gate-error">Mot de passe incorrect — veuillez réessayer.</p>
+  </div>
+
+  <main id="site-content" class="card">
+    <div class="lang-toggle">
+      <a href="stay.html"><img class="flag" src="images/flag-us.svg" alt="">EN</a><span>/</span><a href="stay-fr.html" class="lang-current"><img class="flag" src="images/flag-fr.svg" alt="">FR</a>
+    </div>
+    <a class="back-link" href="index-fr.html">&larr; Retour</a>
+    <p class="eyebrow">Nous nous marions</p>
+    <h1>Où loger</h1>
+    <div class="divider"></div>
+
+    <div class="banner">
+      Nous prévoyons de réserver un bloc de chambres dans certains de ces
+      hôtels, ainsi qu'un service de navette depuis et vers Anchorage —
+      plus de détails à venir bientôt ! Merci de votre patience pendant
+      que nous finalisons tout cela.
+    </div>
+
+    <p class="tagline">
+      Anchorage offre de nombreuses options Airbnb et VRBO locales à des
+      tarifs assez raisonnables — une excellente option si vous souhaitez
+      plus d'espace ou un point d'ancrage pour votre séjour.
+    </p>
+
+    <p class="section-heading">Quartiers pour Airbnb &amp; VRBO</p>
+    <p class="tagline">
+      Si vous consultez des annonces Airbnb ou VRBO, nous vous
+      recommandons de privilégier <strong>South Anchorage</strong> et le
+      <strong>Hillside</strong> (les collines à l'est d'Anchorage) — ce
+      sont des quartiers plus calmes et résidentiels qui offrent un peu
+      cette impression d'être "loin de tout" propre à l'Alaska, tout en
+      restant à une distance raisonnable de tout. Les annonces de Midtown
+      et du centre-ville ont été plus inégales pour nous, donc nous vous
+      conseillerions plutôt South Anchorage ou le Hillside.
+    </p>
+
+    <div class="divider"></div>
+    <p class="tagline">
+      Si vous préférez réserver un hôtel, en voici quelques-uns que nous
+      recommandons :
+    </p>
+
+    <p class="stay-note" style="text-align: center; margin-top: 16px;">
+      Arctic Valley est également indiqué sur la carte ci-dessous, pour
+      référence.
+    </p>
+    <div id="map"></div>
+
+    <ul class="stay-list">
+      <li class="stay-item">
+        <h3>The Lakefront Anchorage</h3>
+        <p class="stay-note">
+          Situé directement sur Lake Hood — la base d'hydravions la plus
+          fréquentée au monde — avec vue sur les montagnes Chugach et des
+          chambres récemment rénovées à quelques minutes de l'aéroport.
+          Un excellent choix si vous voulez une vue de carte postale
+          juste devant votre fenêtre.
+        </p>
+        <a class="stay-link" href="https://lakefrontanchoragehotel.com/" target="_blank" rel="noopener noreferrer">Voir le site</a>
+      </li>
+
+      <li class="stay-item">
+        <h3>Aloft Anchorage</h3>
+        <p class="stay-note">
+          Un séjour moderne et "boutique" à Midtown avec un bar à
+          cocktails animé sur place — un bon choix si vous recherchez un
+          peu de style et un accès facile aux boutiques et restaurants.
+        </p>
+        <a class="stay-link" href="https://www.marriott.com/en-us/hotels/ancal-aloft-anchorage/overview/" target="_blank" rel="noopener noreferrer">Voir le site</a>
+      </li>
+
+      <li class="stay-item">
+        <h3>Sheraton Anchorage Hotel &amp; Spa</h3>
+        <p class="stay-note">
+          Des chambres haut de gamme et un spa sur place juste à côté du
+          centre-ville — un excellent choix si vous recherchez un peu de
+          raffinement et de détente après un long vol.
+        </p>
+        <a class="stay-link" href="https://www.marriott.com/en-us/hotels/ancsi-sheraton-anchorage-hotel-and-spa/overview/" target="_blank" rel="noopener noreferrer">Voir le site</a>
+      </li>
+
+      <li class="stay-item">
+        <h3>The Wildbirch Hotel</h3>
+        <p class="stay-note">
+          Le plus récent hôtel-boutique d'Anchorage, fraîchement rénové
+          et situé en plein cœur du centre-ville, avec son propre
+          restaurant et bar. Idéal si vous voulez marcher jusqu'aux
+          restaurants et à la vie nocturne.
+        </p>
+        <a class="stay-link" href="https://wildbirchhotel.com/" target="_blank" rel="noopener noreferrer">Voir le site</a>
+      </li>
+
+      <li class="stay-item">
+        <h3>Hilton Anchorage</h3>
+        <p class="stay-note">
+          Le plus grand hôtel d'Alaska, en plein centre-ville et à
+          distance de marche des boutiques, restaurants et de Town
+          Square.
+        </p>
+        <a class="stay-link" href="https://www.hilton.com/en/hotels/ancahhf-hilton-anchorage/" target="_blank" rel="noopener noreferrer">Voir le site</a>
+      </li>
+    </ul>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map');
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+
+    var hotels = [
+      { name: 'The Lakefront Anchorage', lat: 61.1779774, lng: -149.9416500 },
+      { name: 'Aloft Anchorage', lat: 61.1875422, lng: -149.8879938 },
+      { name: 'Sheraton Anchorage Hotel & Spa', lat: 61.2169217, lng: -149.8761756 },
+      { name: 'The Wildbirch Hotel', lat: 61.2187816, lng: -149.8864650 },
+      { name: 'Hilton Anchorage', lat: 61.2194560, lng: -149.8917000 },
+    ];
+
+    var markers = hotels.map(function (hotel) {
+      return L.marker([hotel.lat, hotel.lng]).bindPopup(hotel.name);
+    });
+
+    markers.forEach(function (marker) {
+      marker.addTo(map);
+    });
+
+    var ringIcon = L.divIcon({
+      html: '<div class="ring-marker">💍</div>',
+      className: 'ring-icon',
+      iconSize: [40, 40],
+      iconAnchor: [20, 20],
+      popupAnchor: [0, -20],
+    });
+
+    var arcticValley = L.marker([61.246728, -149.534508], { icon: ringIcon })
+      .bindPopup('Arctic Valley')
+      .addTo(map);
+
+    var group = L.featureGroup(markers.concat([arcticValley]));
+    map.fitBounds(group.getBounds(), { padding: [30, 30] });
+
+    // The map starts out inside a hidden (display:none) gated container,
+    // so Leaflet may size it to 0x0 at init. Fix the size once the real
+    // content becomes visible, whether that happens immediately (already
+    // unlocked this session) or after the password form is submitted.
+    document.addEventListener('site-unlocked', function () {
+      map.invalidateSize();
+      map.fitBounds(group.getBounds(), { padding: [30, 30] });
+    });
+    function resyncMap() {
+      map.invalidateSize();
+      map.fitBounds(group.getBounds(), { padding: [30, 30] });
+    }
+    setTimeout(resyncMap, 150);
+    setTimeout(resyncMap, 500);
+    window.addEventListener('load', resyncMap);
+  </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noëlle &amp; Joel</title>
+<meta name="description" content="Notre site de mariage arrive bientôt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<script src="auth.js"></script>
+
+  <div id="gate" class="card">
+    <div class="lang-toggle">
+      <a href="index.html"><img class="flag" src="images/flag-us.svg" alt="">EN</a><span>/</span><a href="index-fr.html" class="lang-current"><img class="flag" src="images/flag-fr.svg" alt="">FR</a>
+    </div>
+    <p class="eyebrow">Bienvenue !</p>
+    <h1>Le Mariage de Noëlle &amp; Joel</h1>
+    <div class="divider"></div>
+    <p class="tagline">Veuillez entrer le mot de passe pour continuer.</p>
+    <form id="gate-form">
+      <div class="field">
+        <label for="gate-password">Mot de passe</label>
+        <input type="password" id="gate-password" name="password" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="submit-button">Entrer</button>
+    </form>
+    <p class="confirmation error" id="gate-error">Mot de passe incorrect — veuillez réessayer.</p>
+  </div>
+
+  <main id="site-content" class="card">
+    <div class="lang-toggle">
+      <a href="index.html"><img class="flag" src="images/flag-us.svg" alt="">EN</a><span>/</span><a href="index-fr.html" class="lang-current"><img class="flag" src="images/flag-fr.svg" alt="">FR</a>
+    </div>
+    <p class="eyebrow">Nous nous marions</p>
+    <h1>Noëlle &amp; Joel</h1>
+    <div class="divider"></div>
+    <p class="tagline">
+      Ce site est encore en construction — nous ajoutons des détails au
+      fur et à mesure, alors revenez souvent à l'approche du grand jour.
+    </p>
+
+    <div class="rsvp-callout">
+      <p class="tagline">
+        Vous ne pouvez pas attendre pour nous répondre ? N'hésitez pas à
+        confirmer votre présence dès maintenant — nous serions ravis
+        d'avoir de vos nouvelles.
+      </p>
+      <a class="button" href="rsvp-fr.html">Confirmer tôt</a>
+    </div>
+
+    <div class="rsvp-callout">
+      <p class="tagline">
+        Vous organisez votre voyage ? Consultez nos recommandations
+        d'hébergement.
+      </p>
+      <a class="button" href="stay-fr.html">Où loger</a>
+    </div>
+
+    <div class="rsvp-callout">
+      <p class="tagline">
+        Vous vous demandez à quoi ressemblera le week-end ? Consultez le
+        programme.
+      </p>
+      <a class="button" href="schedule-fr.html">Programme</a>
+    </div>
+
+    <div class="divider"></div>
+    <p class="tagline">
+      En attendant, dites bonjour à l'animal préféré de Noëlle — Tuq, un
+      phoque commun recueilli qui charme les visiteurs de l'Alaska
+      SeaLife Center à Seward.
+    </p>
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/R7MkkPvzpl0"
+        title="Tuq le phoque commun à l'Alaska SeaLife Center"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </main>
+</body>
+</html>
