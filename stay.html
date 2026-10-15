@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where to Stay — Noëlle &amp; Joel</title>
+<meta name="description" content="Lodging recommendations for Noëlle & Joel's wedding in Anchorage.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+<script src="auth.js"></script>
+
+  <div id="gate" class="card">
+    <p class="eyebrow">Welcome!</p>
+    <h1>Noëlle &amp; Joel's Wedding</h1>
+    <div class="divider"></div>
+    <p class="tagline">Please enter the password to continue.</p>
+    <form id="gate-form">
+      <div class="field">
+        <label for="gate-password">Password</label>
+        <input type="password" id="gate-password" name="password" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="submit-button">Enter</button>
+    </form>
+    <p class="confirmation error" id="gate-error">Incorrect password — please try again.</p>
+  </div>
+
+  <main id="site-content" class="card">
+    <a class="back-link" href="index.html">&larr; Back</a>
+    <p class="eyebrow">We're getting married</p>
+    <h1>Where to Stay</h1>
+    <div class="divider"></div>
+
+    <div class="banner">
+      We intend to reserve a block of rooms at some of these hotels, along
+      with a shuttle service to and from Anchorage — more details to come
+      soon! Thank you for your patience while we get everything finalized.
+    </div>
+
+    <p class="tagline">
+      Anchorage has plenty of local Airbnb and VRBO options at pretty
+      reasonable rates, so that's a great option if you'd like more space
+      or a home base for the trip.
+    </p>
+
+    <p class="section-heading">Neighborhoods for Airbnb &amp; VRBO</p>
+    <p class="tagline">
+      If you're looking at Airbnb or VRBO listings, our recommendation is
+      to focus on <strong>South Anchorage</strong> and the
+      <strong>Hillside</strong> — they're quieter, more residential, and
+      give you a bit of that "away from it all" Alaska feel while still
+      being a reasonable drive to everything. Midtown and Downtown
+      listings have been more hit-or-miss for us, so we'd steer you
+      toward South Anchorage or the Hillside first.
+    </p>
+
+    <div class="divider"></div>
+    <p class="tagline">
+      If you'd rather book a hotel, here are a few we recommend:
+    </p>
+
+    <p class="stay-note" style="text-align: center; margin-top: 16px;">
+      Arctic Valley is also marked on the map below for reference.
+    </p>
+    <div id="map"></div>
+
+    <ul class="stay-list">
+      <li class="stay-item">
+        <h3>The Lakefront Anchorage</h3>
+        <p class="stay-note">
+          Right on Lake Hood — the world's busiest floatplane base — with
+          Chugach Mountain views and recently renovated rooms just minutes
+          from the airport. A great pick if you want postcard scenery
+          right outside your window.
+        </p>
+        <a class="stay-link" href="https://lakefrontanchoragehotel.com/" target="_blank" rel="noopener noreferrer">Visit site</a>
+      </li>
+
+      <li class="stay-item">
+        <h3>Aloft Anchorage</h3>
+        <p class="stay-note">
+          A modern, boutique stay in Midtown with a lively on-site cocktail
+          bar — a good fit if you want some style and easy access to
+          shopping and restaurants.
+        </p>
+        <a class="stay-link" href="https://www.marriott.com/en-us/hotels/ancal-aloft-anchorage/overview/" target="_blank" rel="noopener noreferrer">Visit site</a>
+      </li>
+
+      <li class="stay-item">
+        <h3>Sheraton Anchorage Hotel &amp; Spa</h3>
+        <p class="stay-note">
+          Upscale rooms and an on-site spa just outside downtown — a solid
+          choice if you want a little polish and pampering after a long
+          flight.
+        </p>
+        <a class="stay-link" href="https://www.marriott.com/en-us/hotels/ancsi-sheraton-anchorage-hotel-and-spa/overview/" target="_blank" rel="noopener noreferrer">Visit site</a>
+      </li>
+
+      <li class="stay-item">
+        <h3>The Wildbirch Hotel</h3>
+        <p class="stay-note">
+          Anchorage's newest boutique hotel, freshly renovated and right in
+          the heart of downtown, with its own restaurant and bar. Great if
+          you want to walk to dinner and nightlife.
+        </p>
+        <a class="stay-link" href="https://wildbirchhotel.com/" target="_blank" rel="noopener noreferrer">Visit site</a>
+      </li>
+
+      <li class="stay-item">
+        <h3>Hilton Anchorage</h3>
+        <p class="stay-note">
+          The largest hotel in Alaska, smack in the middle of downtown and
+          walkable to shops, restaurants, and Town Square.
+        </p>
+        <a class="stay-link" href="https://www.hilton.com/en/hotels/ancahhf-hilton-anchorage/" target="_blank" rel="noopener noreferrer">Visit site</a>
+      </li>
+    </ul>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    var map = L.map('map');
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+
+    var hotels = [
+      { name: 'The Lakefront Anchorage', lat: 61.1779774, lng: -149.9416500 },
+      { name: 'Aloft Anchorage', lat: 61.1875422, lng: -149.8879938 },
+      { name: 'Sheraton Anchorage Hotel & Spa', lat: 61.2169217, lng: -149.8761756 },
+      { name: 'The Wildbirch Hotel', lat: 61.2187816, lng: -149.8864650 },
+      { name: 'Hilton Anchorage', lat: 61.2194560, lng: -149.8917000 },
+    ];
+
+    var markers = hotels.map(function (hotel) {
+      return L.marker([hotel.lat, hotel.lng]).bindPopup(hotel.name);
+    });
+
+    markers.forEach(function (marker) {
+      marker.addTo(map);
+    });
+
+    var ringIcon = L.divIcon({
+      html: '<div class="ring-marker">💍</div>',
+      className: 'ring-icon',
+      iconSize: [40, 40],
+      iconAnchor: [20, 20],
+      popupAnchor: [0, -20],
+    });
+
+    var arcticValley = L.marker([61.246728, -149.534508], { icon: ringIcon })
+      .bindPopup('Arctic Valley')
+      .addTo(map);
+
+    var group = L.featureGroup(markers.concat([arcticValley]));
+    map.fitBounds(group.getBounds(), { padding: [30, 30] });
+
+    // The map starts out inside a hidden (display:none) gated container,
+    // so Leaflet may size it to 0x0 at init. Fix the size once the real
+    // content becomes visible, whether that happens immediately (already
+    // unlocked this session) or after the password form is submitted.
+    document.addEventListener('site-unlocked', function () {
+      map.invalidateSize();
+      map.fitBounds(group.getBounds(), { padding: [30, 30] });
+    });
+    function resyncMap() {
+      map.invalidateSize();
+      map.fitBounds(group.getBounds(), { padding: [30, 30] });
+    }
+    setTimeout(resyncMap, 150);
+    setTimeout(resyncMap, 500);
+    window.addEventListener('load', resyncMap);
+  </script>
+</body>
+</html>

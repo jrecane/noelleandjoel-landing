@@ -22,6 +22,7 @@
     if (input.value === PASSWORD) {
       sessionStorage.setItem(STORAGE_KEY, 'yes');
       document.body.classList.add('unlocked');
+      document.dispatchEvent(new CustomEvent('site-unlocked'));
     } else {
       error.classList.add('visible');
       input.value = '';
