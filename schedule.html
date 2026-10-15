@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule — Noëlle &amp; Joel</title>
+<meta name="description" content="Wedding weekend schedule for Noëlle & Joel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<script src="auth.js"></script>
+
+  <div id="gate" class="card">
+    <p class="eyebrow">Welcome!</p>
+    <h1>Noëlle &amp; Joel's Wedding</h1>
+    <div class="divider"></div>
+    <p class="tagline">Please enter the password to continue.</p>
+    <form id="gate-form">
+      <div class="field">
+        <label for="gate-password">Password</label>
+        <input type="password" id="gate-password" name="password" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="submit-button">Enter</button>
+    </form>
+    <p class="confirmation error" id="gate-error">Incorrect password — please try again.</p>
+  </div>
+
+  <main id="site-content" class="card">
+    <a class="back-link" href="index.html">&larr; Back</a>
+    <p class="eyebrow">We're getting married</p>
+    <h1>Wedding Weekend Schedule</h1>
+    <div class="divider"></div>
+    <p class="tagline">
+      We're so happy you'll be spending the weekend with us — here's what
+      we have planned so far. More details will follow as we finalize
+      everything.
+    </p>
+
+    <ul class="stay-list">
+      <li class="stay-item">
+        <h3>Welcome Event</h3>
+        <p class="stay-note">Friday, July 2 — Location to be determined</p>
+      </li>
+
+      <li class="stay-item">
+        <h3>The Wedding</h3>
+        <p class="stay-note">Saturday, July 3 — Arctic Valley</p>
+      </li>
+
+      <li class="stay-item">
+        <h3>Farewell &amp; 4th of July Celebration</h3>
+        <p class="stay-note">Sunday, July 4 — Location to be determined</p>
+      </li>
+    </ul>
+  </main>
+</body>
+</html>
