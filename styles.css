@@ -265,6 +265,26 @@ h1 {
   color: #78716c;
 }
 
+.activity-photo {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin-top: 10px;
+}
+
+.photo-credit {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  color: #a8a29e;
+}
+
+.photo-credit a {
+  color: inherit;
+}
+
 .stay-link {
   display: inline-block;
   margin-top: 8px;
