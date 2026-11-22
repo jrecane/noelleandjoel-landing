@@ -326,6 +326,27 @@ h1 {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.story-gallery + .stay-note,
+.story-photos + .stay-note {
+  margin-top: 14px;
+}
+
+/* Uncropped gallery: keeps each photo's own proportions, and lets an odd
+   last photo span the full row instead of sitting alone. */
+.story-gallery-free {
+  align-items: start;
+}
+
+.story-gallery-free img {
+  aspect-ratio: auto;
+  height: auto;
+}
+
+.story-gallery-free img:last-child:nth-child(odd),
+.story-gallery-free img.wide {
+  grid-column: 1 / -1;
+}
+
 /* One-off crop for a specific photo: zoomed in and shifted right so the
    people (small against the bridge sign in the original shot) actually
    read at this size. */
